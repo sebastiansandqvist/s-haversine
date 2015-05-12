@@ -1,4 +1,5 @@
 # s-haversine
+
 ## Work in progress
 
 [![NPM version](https://img.shields.io/npm/v/s-haversine.svg)](https://www.npmjs.com/package/s-haversine) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-haversine.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-haversine.svg)](https://travis-ci.org/sebastiansandqvist/s-haversine) [![NPM license](https://img.shields.io/npm/l/s-haversine.svg)](https://www.npmjs.com/package/s-haversine)
