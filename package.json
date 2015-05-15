@@ -1,13 +1,18 @@
 {
   "name": "s-haversine",
   "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "description": "Get distance between any two latitute/longitude coordinates",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage_html": "mocha --require blanket -R html-cov > etc/coverage.html",
+    "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -26,5 +31,16 @@
   "bugs": {
     "url": "https://github.com/sebastiansandqvist/s-haversine/issues"
   },
-  "homepage": "https://github.com/sebastiansandqvist/s-haversine"
+  "homepage": "https://github.com/sebastiansandqvist/s-haversine",
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "chai": "^2.1.2",
+    "codeclimate-test-reporter": "0.0.4",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.4",
+    "gulp-mocha": "^2.0.0",
+    "jshint-stylish": "^1.0.1",
+    "mocha": "^2.2.1",
+    "mocha-lcov-reporter": "0.0.2"
+  }
 }
