@@ -1,6 +1,6 @@
 {
   "name": "s-haversine",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -9,9 +9,9 @@
   "directories": {
     "test": "test"
   },
+  "files": ["index.js", "test", "README.md", "etc/coverage.html"],
   "scripts": {
     "test": "mocha",
-    "coverage_html": "mocha --require blanket -R html-cov > etc/coverage.html",
     "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info"
   },
   "repository": {
