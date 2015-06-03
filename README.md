@@ -1,6 +1,6 @@
 # s-haversine
 
-[![NPM version](https://img.shields.io/npm/v/s-haversine.svg)](https://www.npmjs.com/package/s-haversine) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-haversine.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-haversine.svg)](https://travis-ci.org/sebastiansandqvist/s-haversine) [![NPM license](https://img.shields.io/npm/l/s-haversine.svg)](https://www.npmjs.com/package/s-haversine)
+[![NPM version](https://img.shields.io/npm/v/s-haversine.svg)](https://www.npmjs.com/package/s-haversine) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-haversine.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-haversine.svg)](https://travis-ci.org/sebastiansandqvist/s-haversine) [![NPM license](https://img.shields.io/npm/l/s-haversine.svg)](https://www.npmjs.com/package/s-haversine) [![Test Coverage](https://codeclimate.com/github/sebastiansandqvist/s-haversine/badges/coverage.svg)](https://codeclimate.com/github/sebastiansandqvist/s-haversine/coverage)
 
 ## About
 This module calculates the distance between two points on Earth using lat/long coordinates. It is based on the haversine formula and includes a utility to convert from degrees/minutes/seconds to the signed decimal degrees format needed for the formula to work.
