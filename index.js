@@ -17,7 +17,12 @@ haversine.degreesToRadians = function(deg) {
 
 // ----- distance between two points
 // ---------------------------------------
-haversine.distance = function(lat1, lon1, lat2, lon2) {
+haversine.distance = function(coords1, coords2) {
+	
+	var lat1 = coords1[0];
+	var lon1 = coords1[1];
+	var lat2 = coords2[0];
+	var lon2 = coords2[1];
 
 	var latitudeDifference = this.degreesToRadians(lat2 - lat1);
 	var logitudeDifference = this.degreesToRadians(lon2 - lon1);

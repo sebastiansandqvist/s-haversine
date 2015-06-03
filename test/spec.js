@@ -19,9 +19,9 @@ describe('haversine', function() {
 	});
 
 	it('should get distance between two points', function() {
-		expect(haversine.distance(40, 50, 40, 50)).to.equal(0);
-		expect(haversine.distance(40, -70, -70, 40)).to.be.closeTo(14890000, 5000);
-		expect(haversine.distance(36.151829, -115.143296, 36.151465, -115.146284)).to.be.closeTo(300, 100);
+		expect(haversine.distance([40, 50], [40, 50])).to.equal(0);
+		expect(haversine.distance([40, -70], [-70, 40])).to.be.closeTo(14890000, 5000);
+		expect(haversine.distance([36.151829, -115.143296], [36.151465, -115.146284])).to.be.closeTo(300, 100);
 	});
 
 });
@@ -51,7 +51,7 @@ describe('degrees to radians', function() {
 describe('earth radius', function() {
 	it('should be configurable', function() {
 		haversine.earthRadius = 1000000;
-		expect(haversine.distance(40, 50, 40, 50)).to.equal(0);
-		expect(haversine.distance(40, -70, -70, 40)).to.not.be.closeTo(14890000, 5000);
+		expect(haversine.distance([40, 50], [40, 50])).to.equal(0);
+		expect(haversine.distance([40, -70], [-70, 40])).to.not.be.closeTo(14890000, 5000);
 	});
 });

@@ -12,12 +12,11 @@ Get a pair of latitude/longitude coordinates (eg. from the geolocation api), the
 ```javascript
 var haversine = require('s-haversine');
 
-var lat1 = 36.151829;
-var lon1 = -115.143296;
-var lat2 = 36.151465
-var lon2 = -115.146284;
+// ---------- [latitude, longitude];
+var coords1 = [36.151829, -115.143296];
+var coords2 = [36.151465, -115.146284];
 
-haversine.distance(lat1, lon1, lat2, lon2); // 271.314... (meters)
+haversine.distance(coords1, coords2); // 271.314... (meters)
 ```
 
 #### Converting deg/min/sec to decimal
