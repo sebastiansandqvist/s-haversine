@@ -47,3 +47,11 @@ describe('degrees to radians', function() {
 		expect(haversine.degreesToRadians(360)).to.equal(Math.PI * 2);
 	});
 });
+
+describe('earth radius', function() {
+	it('should be configurable', function() {
+		haversine.earthRadius = 1000000;
+		expect(haversine.distance(40, 50, 40, 50)).to.equal(0);
+		expect(haversine.distance(40, -70, -70, 40)).to.not.be.closeTo(14890000, 5000);
+	});
+});
