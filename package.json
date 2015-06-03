@@ -1,6 +1,6 @@
 {
   "name": "s-haversine",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/sebastiansandqvist/s-haversine",
   "devDependencies": {
-    "blanket": "^1.1.6",
+    "blanket": "1.1.6",
     "chai": "^2.1.2",
     "codeclimate-test-reporter": "0.0.4",
     "gulp": "^3.8.11",
