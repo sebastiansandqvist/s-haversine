@@ -1,6 +1,6 @@
 'use strict';
 
-var haversine = module.exports = {};
+const haversine = module.exports = {};
 
 
 // ----- configurable earthRadius
@@ -10,7 +10,7 @@ haversine.earthRadius = 6371000;
 
 // ----- convert degrees to radians
 // ---------------------------------------
-haversine.degreesToRadians = function(deg) {
+haversine.degToRad = function(deg) {
 	return deg * (Math.PI / 180);
 };
 
@@ -19,20 +19,20 @@ haversine.degreesToRadians = function(deg) {
 // ---------------------------------------
 haversine.distance = function(coords1, coords2) {
 	
-	var lat1 = coords1[0];
-	var lon1 = coords1[1];
-	var lat2 = coords2[0];
-	var lon2 = coords2[1];
+	const lat1 = coords1[0];
+	const lon1 = coords1[1];
+	const lat2 = coords2[0];
+	const lon2 = coords2[1];
 
-	var latitudeDifference = this.degreesToRadians(lat2 - lat1);
-	var logitudeDifference = this.degreesToRadians(lon2 - lon1);
+	const latitudeDifference = this.degToRad(lat2 - lat1);
+	const logitudeDifference = this.degToRad(lon2 - lon1);
 
-	var haversine =
-		Math.sin(latitudeDifference/2) * Math.sin(latitudeDifference/2) +
-		Math.cos(this.degreesToRadians(lat1)) * Math.cos(this.degreesToRadians(lat2)) * 
-		Math.sin(logitudeDifference/2) * Math.sin(logitudeDifference/2); 
+	const n =
+		Math.sin(latitudeDifference / 2) * Math.sin(latitudeDifference / 2) +
+		Math.cos(this.degToRad(lat1)) * Math.cos(this.degToRad(lat2)) *
+		Math.sin(logitudeDifference / 2) * Math.sin(logitudeDifference / 2);
 
-	var distance = 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+	const distance = 2 * Math.atan2(Math.sqrt(n), Math.sqrt(1 - n));
 
 	return this.earthRadius * distance;
 
@@ -44,16 +44,19 @@ haversine.distance = function(coords1, coords2) {
 haversine.toDecimal = function(str) {
 
 	str = str.toLowerCase(); // throws if input is not a string
-	var lastChar = str.slice(-1);
-	var negative = false;
+	const lastChar = str.slice(-1);
+	
+	let negative = false;
 
 	if (lastChar === 'w' || lastChar === 's') {
 		negative = true; // south and west => negative
 	}
 
-	var values = str.split(/[^0-9.]/);
-	var i;
+	const values = str.split(/[^0-9.]/);
+	
 	// convert strings to numbers
+	let i;
+
 	for (i = 0; i < values.length; i++) {
 
 		// remove empty values
@@ -71,7 +74,7 @@ haversine.toDecimal = function(str) {
 		values[i] = values[i] || 0;
 	}
 
-	var result = values[0] + (values[1] / 60) + (values[2] / 3600);
+	const result = values[0] + (values[1] / 60) + (values[2] / 3600);
 
 	if (negative) {
 		return result * -1;

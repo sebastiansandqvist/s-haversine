@@ -1,11 +1,5 @@
 // ----- dependencies
 // ---------------------------------------
-require('blanket')({
-    pattern: function (filename) {
-        return !/node_modules/.test(filename);
-    }
-});
-
 var expect = require('chai').expect;
 var haversine = require('../index.js');
 
@@ -41,10 +35,10 @@ describe('toDecimal', function() {
 
 describe('degrees to radians', function() {
 	it('should convert degrees to radians', function() {
-		expect(haversine.degreesToRadians(0)).to.equal(0);
-		expect(haversine.degreesToRadians(15)).to.equal(Math.PI / 12);
-		expect(haversine.degreesToRadians(180)).to.equal(Math.PI);
-		expect(haversine.degreesToRadians(360)).to.equal(Math.PI * 2);
+		expect(haversine.degToRad(0)).to.equal(0);
+		expect(haversine.degToRad(15)).to.equal(Math.PI / 12);
+		expect(haversine.degToRad(180)).to.equal(Math.PI);
+		expect(haversine.degToRad(360)).to.equal(Math.PI * 2);
 	});
 });
 
