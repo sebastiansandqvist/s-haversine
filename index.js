@@ -1,4 +1,4 @@
-const haversine = module.exports = {};
+var haversine = module.exports = {};
 
 // configurable earthRadius (in meters)
 haversine.earthRadius = 6371000;
@@ -11,20 +11,20 @@ haversine.degToRad = function(deg) {
 
 // distance between two points
 haversine.distance = function(coords1, coords2) {
-  const lat1 = coords1[0];
-  const lon1 = coords1[1];
-  const lat2 = coords2[0];
-  const lon2 = coords2[1];
+  var lat1 = coords1[0];
+  var lon1 = coords1[1];
+  var lat2 = coords2[0];
+  var lon2 = coords2[1];
 
-  const latitudeDifference = this.degToRad(lat2 - lat1);
-  const logitudeDifference = this.degToRad(lon2 - lon1);
+  var latitudeDifference = this.degToRad(lat2 - lat1);
+  var logitudeDifference = this.degToRad(lon2 - lon1);
 
-  const n =
+  var n =
     Math.sin(latitudeDifference / 2) * Math.sin(latitudeDifference / 2) +
     Math.cos(this.degToRad(lat1)) * Math.cos(this.degToRad(lat2)) *
     Math.sin(logitudeDifference / 2) * Math.sin(logitudeDifference / 2);
 
-  const distance = 2 * Math.atan2(Math.sqrt(n), Math.sqrt(1 - n));
+  var distance = 2 * Math.atan2(Math.sqrt(n), Math.sqrt(1 - n));
 
   return this.earthRadius * distance;
 };
@@ -33,18 +33,18 @@ haversine.distance = function(coords1, coords2) {
 // convert degrees/minutes/seconds to decimal degrees
 haversine.toDecimal = function(str) {
   str = str.toLowerCase(); // throws if input is not a string
-  const lastChar = str.slice(-1);
+  var lastChar = str.slice(-1);
 
-  let negative = false;
+  var negative = false;
 
   if (lastChar === 'w' || lastChar === 's') {
     negative = true; // south and west => negative
   }
 
-  const values = str.split(/[^0-9.]/);
+  var values = str.split(/[^0-9.]/);
 
   // convert strings to numbers
-  let i;
+  var i;
   for (i = 0; i < values.length; i++) {
     // remove empty values
     if (!values[i]) {
@@ -59,7 +59,7 @@ haversine.toDecimal = function(str) {
     values[i] = values[i] || 0;
   }
 
-  const result = values[0] + (values[1] / 60) + (values[2] / 3600);
+  var result = values[0] + (values[1] / 60) + (values[2] / 3600);
 
   if (negative) return result * -1;
   return result;
